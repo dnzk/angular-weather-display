@@ -1,1 +1,3 @@
-console.log('this is okay');
+import angular from 'angular';
+
+console.log(angular);
