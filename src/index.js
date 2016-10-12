@@ -1,8 +1,10 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+import ComponentsModule from './components/components';
 
 const dependencies = [
-  uiRouter
+  uiRouter,
+  ComponentsModule.name
 ];
 
 let main = angular.module('app', dependencies);
@@ -15,7 +17,7 @@ main.config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/',
-      template: '<h1>Home</h1>'
+      component: 'root'
     })
 })
 

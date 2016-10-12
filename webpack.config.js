@@ -1,4 +1,5 @@
 var path = require('path');
+var bourbon = require('node-bourbon').includePaths;
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -22,6 +23,10 @@ module.exports = {
       {
         test: /\.html$/,
         loader: 'html'
+      },
+      {
+        test: /\.s?css$/,
+        loader: 'style!css!sass?includePaths[]=' + bourbon
       }
     ]
   },
