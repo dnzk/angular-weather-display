@@ -1,3 +1,9 @@
 import angular from 'angular';
+import uiRouter from 'angular-ui-router';
 
-console.log(angular);
+const dependencies = [
+  uiRouter
+];
+
+let main = angular.module('app', dependencies);
+
