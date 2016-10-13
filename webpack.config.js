@@ -13,6 +13,7 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'),
     port: 3333
   },
+  devtool: 'inline-source-map',
   module: {
     loaders: [
       {

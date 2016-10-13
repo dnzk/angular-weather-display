@@ -1,10 +1,12 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import ComponentsModule from './components/components';
+import CommonModule from './common/common';
 
 const dependencies = [
   uiRouter,
-  ComponentsModule.name
+  ComponentsModule.name,
+  CommonModule.name
 ];
 
 let main = angular.module('app', dependencies);
@@ -17,7 +19,11 @@ main.config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/',
-      component: 'root'
+      component: 'permission'
+    })
+    .state('query', {
+      url: '/enter-location',
+      component: 'locationQuery'
     })
 })
 
