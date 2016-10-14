@@ -25,5 +25,9 @@ main.config(function ($stateProvider, $urlRouterProvider) {
       url: '/enter-location',
       component: 'locationQuery'
     })
+    .state('weather', {
+      url: '/current-weather',
+      component: 'weather'
+    })
 })
 

@@ -7,18 +7,41 @@ class LocationModel extends Request {
 
     this.$q = $q;
     this.$http = $http;
+    this.params = {};
   }
   getLocation() {
     return this.$q((resolve, reject) => {
+      if ('geolocation' in navigator) {
+        resolve(navigator.geolocation);
+      } else {
+        reject(false);
+      }
+    });
+  }
+  getWeather(params) {
+    return this.$q((resolve, reject) => {
       this.$http({
         method: 'GET',
-        url: this.getUrl('zip=12940'),
+        url: this.getUrl(params),
       }).then(function (response) {
         resolve(response);
       }).then(function (error) {
         reject(error);
       });
     });
+  }
+  getCurrentParams() {
+    return this.params;
+  }
+  setCurrentParams(params) {
+    this.params = params;
+  }
+  getCurrentParamsStringified() {
+    let stringified = '';
+    for (var i in this.params) {
+      stringified += `${i}=${this.params[i]}&`;
+    }
+    return stringified;
   }
 }
 

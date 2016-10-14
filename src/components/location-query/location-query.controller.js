@@ -1,17 +1,15 @@
 class LocationQueryController {
-  constructor(LocationModel) {
+  constructor($state, LocationModel) {
     'ngInject';
 
+    this.$state = $state;
     this.LocationModel = LocationModel;
   }
   getWeather() {
-    this.LocationModel.getLocation()
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
+    this.LocationModel.setCurrentParams({
+      zip: this.zipCode
+    });
+    this.$state.go('weather');
   }
 }
 
