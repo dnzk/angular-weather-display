@@ -1,7 +1,8 @@
 class WeatherController {
-  constructor(LocationModel, $state) {
+  constructor(LocationModel, $state, $sce) {
     'ngInject';
 
+    this.$sce = $sce;
     this.LocationModel = LocationModel;
     let params = this.LocationModel.getCurrentParamsStringified();
     this.LocationModel.getWeather(params)
@@ -13,8 +14,23 @@ class WeatherController {
       })
   }
   setTableValues(data) {
+    for (var i in data) {
+      if (data[i].constructor === Object) {
+        data[i] = this.stringifyValue(data[i]);
+      } else {
+        data[i] = `<span>${data[i]}</span>`;
+      }
+      data[i] = this.$sce.trustAsHtml(data[i]);
+    }
+
     this.rows = data;
-    console.log(this.rows);
+  }
+  stringifyValue(value) {
+    var string = '';
+    for (var i in value) {
+      string += `${i}: ${value[i]}<br />`
+    }
+    return string;
   }
 }
 

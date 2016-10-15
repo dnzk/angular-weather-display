@@ -1,4 +1,17 @@
+@import 'bourbon';
+
+weather {
+  width: 100%;
+}
+
 #weather-report {
+  @include display(flex);
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include align-items(center);
+  table {
+    width: 50%;
+  }
   tr {
     border-bottom: 1px solid #CCCCCC;
     &:nth-last-child(1) {
@@ -10,8 +23,10 @@
     &.key {
       border-right: 1px solid black;
       text-align: right;
+      width: 20%;
     }
     &.value {
+      width: 80%;
     }
   }
 }
