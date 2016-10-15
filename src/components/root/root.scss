@@ -1,6 +1,15 @@
 @import 'bourbon';
 @import '../../../node_modules/reset-css/_reset.scss';
 
+// colors
+$background: #FAFAFA;
+$lightest: #FFFFFF;
+$accent: #004182;
+$accent-2: #0060C4;
+$font: #0D0D0B;
+
 html {
   font-family: Helvetica, 'Sans serif';
+  background-color: $background;
+  color: $font;
 }
