@@ -1,11 +1,11 @@
-<div>
+<div id="weather-report">
   <h1>Current weather:</h1>
   <table>
     <tr ng-repeat="(key, value) in weatherCtrl.rows">
-      <td>
+      <td class="key">
         {{ key }}
       </td>
-      <td>
+      <td class="value">
         {{ value  }}
       </td>
     </tr>

@@ -1,0 +1,17 @@
+#weather-report {
+  tr {
+    border-bottom: 1px solid #CCCCCC;
+    &:nth-last-child(1) {
+      border-bottom: none;
+    }
+  }
+  td {
+    padding: 5px;
+    &.key {
+      border-right: 1px solid black;
+      text-align: right;
+    }
+    &.value {
+    }
+  }
+}
