@@ -1,9 +1,11 @@
-<div>
+<div id="location-query">
   <form>
     <label for="location">Enter postcode or country name to display weather:</label>
-    <input type="text" id="location" ng-model="locationQueryCtrl.zipCode" />
-    <button type="button" ng-click="locationQueryCtrl.getWeather()">
-      Search
-    </button>
+    <div id="search-input">
+      <input class="text-input" type="text" id="location" ng-model="locationQueryCtrl.zipCode" />
+      <button class="button" type="button" ng-click="locationQueryCtrl.getWeather()">
+        Search
+      </button>
+    </div>
   </form>
 </div>

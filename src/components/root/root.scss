@@ -31,6 +31,13 @@ h1 {
   font-weight: 700;
 }
 
+#root {
+  @include display(flex);
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include align-items(center);
+}
+
 .button {
   padding: 10px;
   border: 1px solid $accent-2;
@@ -43,4 +50,10 @@ h1 {
     background-color: $accent-2;
     color: $lightest;
   }
+}
+
+.text-input {
+  font-size: 100%;
+  padding-left: 10px;
+  outline: none;
 }

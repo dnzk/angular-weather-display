@@ -1,0 +1,23 @@
+@import 'bourbon';
+
+#location-query {
+  @include display(flex);
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include align-items(center);
+  height: 100%;
+  form {
+    @include display(flex);
+    @include flex-direction(column);
+    @include align-items(space-between);
+    #search-input {
+      @include display(flex);
+      input[type="text"] {
+        width: 70%;
+      }
+      button[type="button"] {
+        width: 30%;
+      }
+    }
+  }
+}
