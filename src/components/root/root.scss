@@ -13,3 +13,34 @@ html {
   background-color: $background;
   color: $font;
 }
+
+html, body, #root {
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 2em;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.button {
+  padding: 10px;
+  border: 1px solid $accent-2;
+  color: $font;
+  background-color: $lightest;
+  outline: none;
+  &:hover {
+    cursor: pointer;
+    outline: 1px solid $accent;
+    background-color: $accent-2;
+    color: $lightest;
+  }
+}

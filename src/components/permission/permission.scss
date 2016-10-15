@@ -1,0 +1,17 @@
+@import 'bourbon';
+#permission {
+  @include display(flex);
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include align-items(center);
+  height: 100%;
+  #dialog {
+    @include display(flex);
+    @include flex-direction(column);
+    @include justify-content(space-between);
+    @include align-items(center);
+    height: 100px;
+    width: 50%;
+    text-align: center;
+  }
+}

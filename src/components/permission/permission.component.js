@@ -1,4 +1,5 @@
 import template from './permission.html';
+import './permission.scss';
 import controller from './permission.controller'
 
 export default {
