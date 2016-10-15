@@ -7,7 +7,7 @@
     "build": "./node_modules/.bin/webpack -p",
     "clear:dist": "rm -rf ./dist/*",
     "start": "./node_modules/.bin/webpack-dev-server -d",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/babel-tape-runner test/*.test.js | ./node_modules/.bin/faucet"
   },
   "repository": {
     "type": "git",
@@ -21,11 +21,13 @@
   },
   "homepage": "https://github.com/dnzk/angular-weather-display#readme",
   "devDependencies": {
-    "babel": "^6.5.2",
+    "babel-cli": "^6.16.0",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.16.0",
+    "babel-tape-runner": "^2.0.1",
     "css-loader": "^0.25.0",
+    "faucet": "0.0.1",
     "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.22.0",
     "ng-annotate-loader": "^0.2.0",
@@ -33,6 +35,7 @@
     "raw-loader": "^0.5.1",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
+    "tape": "^4.6.2",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
   },
@@ -41,5 +44,10 @@
     "angular-ui-router": "^1.0.0-beta.3",
     "node-bourbon": "^4.2.8",
     "reset-css": "^2.2.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
   }
 }
