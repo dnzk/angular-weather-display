@@ -27,7 +27,7 @@ module.exports = {
       },
       {
         test: /\.s?css$/,
-        loader: 'style!css!sass?includePaths[]=' + bourbon
+        loader: 'style!css!sass?includePaths[]=' + bourbon 
       }
     ]
   },
